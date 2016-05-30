@@ -2,8 +2,6 @@ source 'https://rubygems.org'
 
 ruby '2.2.4'
 
-
-
 gem 'rails', '4.2.6'
 gem 'pg'
 gem 'sass-rails'
@@ -13,10 +11,12 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jquery-turbolinks'
 gem 'simple_form'
+gem 'hamlit-rails'
 gem 'foundation-rails'
 gem 'devise'
 gem 'pundit'
 gem 'figaro'
+
 group :development do
   gem 'thin'
   gem 'better_errors'
@@ -53,5 +53,3 @@ group :production do
   gem 'puma'
   gem 'lograge'
 end
-
-gem 'hamlit-rails'
