@@ -1,2 +1,15 @@
-%h1 Welcome#index
-%p Find me in app/views/welcome/index.html.haml
+.row.smt.smb
+  .large-12.columns
+    %h1.callout.text-center You should sign up for this site!
+.row
+  .large-4.columns
+    = filler_text
+  .large-4.columns
+    = filler_text
+  .large-4.columns
+    = filler_text
+
+.row.align-center.smt
+  .large-6.large-centered.text-center.columns 
+    = link_to 'Sign up', new_user_registration_path, class: 'tiny radius button'
+    = link_to 'Sign in', new_user_session_path, class: 'tiny radius button'
