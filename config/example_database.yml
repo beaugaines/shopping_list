@@ -1,0 +1,18 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  username: sircharles
+  password:
+
+development:
+  <<: *default
+  database: shopping_list_development
+
+test:
+  <<: *default
+  database: shopping_list_test
+
+production:
+  <<: *default
+  database: shopping_list_production
