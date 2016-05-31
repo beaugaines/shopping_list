@@ -1,0 +1,19 @@
+%h3 Current cart
+
+.row
+  .large-8.columns
+    - @cart_items.each do |cart_item|
+      .row
+        .large-3.columns
+          %p{class: "inline smr #{'added-item' if cart_item.in_cart?}"}= "#{cart_item.item_name} - #{cart_item.quantity}"
+        .large-6.columns
+          - unless cart_item.in_cart?
+            = link_to 'Got it!', add_cart_item_path(id: cart_item.id), method: :patch, class: 'tiny radius success button'
+
+  .large-4.columns
+    %h4 Add items
+    - @items.each do |item|
+      %span= item.name 
+      = render partial: 'cart_items/form', locals: { cart: @cart, item: item }
+
+    = link_to 'Empty cart', cart_path(@cart), method: :delete, data: { confirm: 'Are you sure?' }, class: 'tiny alert button'

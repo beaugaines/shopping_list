@@ -1,0 +1,7 @@
+.row
+  .large-3.columns
+    = simple_form_for list.list_items.new do |f|
+      = f.hidden_field :list_id, value: list.id
+      = f.hidden_field :item_id, value: item.id
+      = f.input :quantity
+      = f.button :submit, 'Add', class: 'tiny radius button'

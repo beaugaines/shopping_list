@@ -5,3 +5,18 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+# user = User.create(
+#   email: 'test@user.com',
+#   password: 'password'
+# )
+
+items = %w(avocado onion garlic lime cilantro jalapeno tomato)
+
+items.each do |name|
+  Item.create(
+    name: name,
+    price: rand(1000...3000),
+    description: FFaker::CheesyLingo.sentence
+  )
+end

@@ -1,0 +1,15 @@
+%h3= @list.name
+
+.row
+  .large-8.columns
+    - @list.list_items.each do |list_item|
+      %h5= list_item.item_name
+      %p
+        Quantity:
+        = list_item.quantity
+  .large-4.columns
+  
+    %h4 Add items
+    - @items.each do |item|
+      %span= item.name 
+      = render partial: 'list_items/form', locals: { list: @list, item: item }

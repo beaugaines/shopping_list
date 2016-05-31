@@ -13,4 +13,7 @@
 
   %body
     = render 'shared/header'
-    = yield
+    = render 'shared/messages' 
+    .row.align-center.smt
+      .large-10.columns
+        = yield

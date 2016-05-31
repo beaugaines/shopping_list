@@ -1,0 +1,11 @@
+.row
+  .large-8.columns
+    %h3 My lists
+    - @lists.each do |list|
+      %p= link_to list.name, list_path(list)
+      %p= link_to '(add to cart)', populate_cart_path(list_id: list.id), method: :post
+      - if session[:cart_id]
+        %p= link_to 'View current cart', cart_path(session[:cart_id])
+  .large-4.columns
+    .new-list
+      = link_to 'New list', new_list_path, class: 'tiny secondary button'
