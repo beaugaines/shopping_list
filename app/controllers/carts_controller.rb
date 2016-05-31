@@ -9,7 +9,7 @@ class CartsController < ApplicationController
 
   # GET /carts/1
   def show
-    @cart_items = @cart.cart_items.order(in_cart: :asc)
+    @cart_items = @cart.cart_items.includes(:item).order(in_cart: :asc)
     @items = Item.all
   end
 

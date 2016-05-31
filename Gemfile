@@ -27,6 +27,7 @@ group :development do
   gem 'ffaker'
   gem 'rails_apps_testing', github: 'beaugaines/rails_apps_testing'
   gem 'letter_opener'
+  gem 'active_record_query_trace'
 end
 
 group :development, :test do
